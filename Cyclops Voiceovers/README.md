@@ -60,16 +60,15 @@ The `CSharp\Ref\` folder must be populated before the project will compile. It i
 
 1. Download the latest `luacsforbarotrauma_refs.zip` from the [LuaCsForBarotrauma Releases page](https://github.com/evilfactory/LuaCsForBarotrauma/releases/download/latest/luacsforbarotrauma_refs.zip).
 
-2. Extract the ZIP contents into the `CSharp\Ref\` folder. The result should look like:
+2. Extract the ZIP contents into the `Ref\` folder. The result should look like:
    ```
    Cyclops Voiceovers/
-   └── CSharp/
-       └── Ref/
-           ├── Windows/
-           │   ├── Barotrauma.dll
-           │   └── BarotraumaCore.dll
-           ├── MonoGame.Framework.Windows.NetStandard.dll
-           └── ... (other shared refs)
+   └── Ref/
+       ├── Windows/
+       │   ├── Barotrauma.dll
+       │   └── BarotraumaCore.dll
+       ├── MonoGame.Framework.Windows.NetStandard.dll
+       └── ... (other shared refs)
    ```
 
 If Barotrauma updates and the DLLs go out of date, repeat these steps and rebuild.
