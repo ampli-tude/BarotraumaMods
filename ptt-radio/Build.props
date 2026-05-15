@@ -1,0 +1,42 @@
+<Project>
+    <ItemGroup>
+        <!-- Shared refs — local Ref/ folder -->
+        <Reference Include="Farseer.NetStandard">
+            <HintPath>$(MSBuildThisFileDirectory)Ref\Farseer.NetStandard.dll</HintPath>
+        </Reference>
+        <Reference Include="Lidgren.NetStandard">
+            <HintPath>$(MSBuildThisFileDirectory)Ref\Lidgren.NetStandard.dll</HintPath>
+        </Reference>
+        <Reference Include="MoonSharp.Interpreter">
+            <HintPath>$(MSBuildThisFileDirectory)Ref\MoonSharp.Interpreter.dll</HintPath>
+        </Reference>
+        <Reference Include="XNATypes">
+            <HintPath>$(MSBuildThisFileDirectory)Ref\XNATypes.dll</HintPath>
+        </Reference>
+        <Reference Include="NVorbis">
+            <HintPath>$(MSBuildThisFileDirectory)Ref\NVorbis.dll</HintPath>
+        </Reference>
+
+        <PackageReference Include="HarmonyX" Version="2.16.0" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <!-- IMPORTANT: Must end with '\'. Points to the mod root (this workspace folder). -->
+        <ModDeployDir>F:\workspace\ptt-radio\</ModDeployDir>
+        <!-- IMPORTANT: Must match the DLL name in ModConfig.xml. -->
+        <AssemblyName>PTTRadio</AssemblyName>
+        <RootNamespace>PTTRadio</RootNamespace>
+        <GenerateDocumentationFile>False</GenerateDocumentationFile>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PlatformTarget>x64</PlatformTarget>
+        <Platforms>x64</Platforms>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+</Project>

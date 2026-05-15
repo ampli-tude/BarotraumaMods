@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModConfig>
+    <Assembly File="%ModDir%/bin/Client/Windows/AbandonShip.dll" Target="Client" Platform="Windows"/>
+    <Assembly File="%ModDir%/bin/Server/AbandonShip.dll" Target="Server"/>
+</ModConfig>

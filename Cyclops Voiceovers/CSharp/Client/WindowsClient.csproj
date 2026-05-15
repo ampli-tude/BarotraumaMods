@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\Build.props"/>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <DefineConstants>CLIENT;WINDOWS</DefineConstants>
+        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <DefineConstants>CLIENT;WINDOWS</DefineConstants>
+        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Shared source -->
+        <Compile Include="..\Shared\IgnoresAccessChecks.cs" />
+        <Compile Include="..\Shared\AssemblySettings.cs" />
+        <Compile Include="..\Shared\Plugin.cs" />
+        <Compile Include="..\Shared\NetBridge.cs" />
+        <Compile Include="..\Shared\Detection.cs" />
+        <Compile Include="..\Shared\AudioManager.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Publicized Barotrauma assemblies (client build) -->
+        <Reference Include="Barotrauma">
+            <HintPath>..\..\Ref\Windows\Barotrauma.dll</HintPath>
+        </Reference>
+        <Reference Include="BarotraumaCore">
+            <HintPath>..\..\Ref\Windows\BarotraumaCore.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoGame.Framework.Windows.NetStandard">
+            <HintPath>..\..\Ref\MonoGame.Framework.Windows.NetStandard.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <Target Name="CopyFiles" AfterTargets="Build">
+        <ItemGroup>
+            <Assemblies Include="$(TargetDir)$(TargetName).dll" />
+            <DepsFiles Include="$(TargetDir)$(TargetName).deps.json" />
+        </ItemGroup>
+        <MakeDir Directories="$(ModDeployDir)bin\Client\Windows" />
+        <Copy SourceFiles="@(Assemblies)" DestinationFiles="$(ModDeployDir)bin\Client\Windows\$(TargetName).dll" />
+        <Copy SourceFiles="@(DepsFiles)"  DestinationFiles="$(ModDeployDir)bin\Client\Windows\$(TargetName).deps.json" />
+    </Target>
+</Project>
