@@ -16,11 +16,14 @@
         <Reference Include="NVorbis">
             <HintPath>$(MSBuildThisFileDirectory)..\Ref\NVorbis.dll</HintPath>
         </Reference>
+        <Reference Include="MonoMod.Utils">
+            <HintPath>$(MSBuildThisFileDirectory)..\Ref\MonoMod.Utils.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <PropertyGroup>
         <!-- IMPORTANT: Must end with '\'. Points to the mod root. -->
-        <ModDeployDir>F:\workspace\cyclops-mod\</ModDeployDir>
+        <ModDeployDir>F:\workspace\BarotraumaMods\Cyclops Voiceovers\</ModDeployDir>
         <!-- IMPORTANT: Must match the DLL name in ModConfig.xml. -->
         <AssemblyName>AbandonShip</AssemblyName>
         <RootNamespace>CyclopsVoices</RootNamespace>

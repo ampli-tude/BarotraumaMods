@@ -7,10 +7,9 @@ global using Barotrauma.LuaCs;
 global using Barotrauma.Networking;
 global using Microsoft.Xna.Framework;
 
-// Grant access to internal members of all three Barotrauma assemblies.
-// The Publicized DLLs already make everything public, but these attributes
-// also suppress C# accessibility diagnostics and are required when linking
-// against non-publicized DLLs.
+// Grant runtime access to internal members of Barotrauma assemblies.
+// IgnoresAccessChecksToAttribute is built into .NET 8 — no custom definition needed.
 [assembly: IgnoresAccessChecksTo("Barotrauma")]
 [assembly: IgnoresAccessChecksTo("BarotraumaCore")]
 [assembly: IgnoresAccessChecksTo("DedicatedServer")]
+

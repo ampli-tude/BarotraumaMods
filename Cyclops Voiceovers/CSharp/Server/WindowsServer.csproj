@@ -13,7 +13,6 @@
 
     <ItemGroup>
         <!-- Shared source -->
-        <Compile Include="..\Shared\IgnoresAccessChecks.cs" />
         <Compile Include="..\Shared\AssemblySettings.cs" />
         <Compile Include="..\Shared\Plugin.cs" />
         <Compile Include="..\Shared\NetBridge.cs" />
